@@ -1,0 +1,93 @@
+@charset 'UTF-8';
+@use "sass:math"; //計算関数
+@use "../../global" as *;
+
+/*
+  3.2  -Project
+----------------------------------------------------- */
+
+/*
+  天気
+*/
+.l-weather__bg {
+  background: linear-gradient(to bottom left, #cdedd4, #8fb0cc);
+  padding-top: pxToRem(28px);
+  padding-bottom: pxToRem(68px);
+  padding-left: pxToRem(24px);
+  padding-right: pxToRem(24px);
+  border-radius: 15px;
+  margin-bottom: pxToRem(88px);
+}
+//今日の天気のアイコン
+.p-currentWeatherIcon {
+  width: 120px;
+  margin: 0 auto;
+  & img {
+    width: 100%;
+  }
+}
+//週の天気のアイコン
+.p-WeatherIcon {
+  width: 90px;
+  margin: 0 auto;
+  & img {
+    width: 100%;
+  }
+}
+//週の天気の日付
+.p-weatherDate {
+  text-align: center;
+}
+//今日の温度
+.l-currentTemp__wrapper {
+  text-align: center;
+  $font-size: 68px;
+  font-size: pxToRem($font-size);
+  color: #fff;
+  margin-top: pxToRem(18px);
+  margin-bottom: pxToRem(32px);
+}
+//週の大枠
+.l-weather__wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+//週の1日
+.l-weather__box {
+  width: 15.5%;
+  display: flex;
+  flex-flow: column;
+}
+.p-weekTemp {
+  $font-size: 15px;
+  font-size: pxToRem($font-size);
+  text-align: center;
+}
+//今日の日出日入
+.l-sun__wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: pxToRem(48px);
+}
+.l-sun__box {
+  display: flex;
+  justify-content: center;
+  margin-right: pxToRem(40px);
+}
+.p-sunrise,
+.p-sunset {
+  $font-size: 25px;
+  font-size: pxToRem($font-size);
+  color: #fff;
+  line-height: pxToRem(48px);
+  margin-right: pxToRem(18px);
+}
+.p-sunriseTime,
+.p-sunsetTime {
+  $font-size: 48px;
+  font-size: pxToRem($font-size);
+  color: #fff;
+}
+.-inline {
+  display: inline;
+}

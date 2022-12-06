@@ -1,0 +1,39 @@
+@charset 'UTF-8';
+@use "sass:math"; //計算関数
+@use "../../global" as *;
+
+/*
+  3.2  -Project
+----------------------------------------------------- */
+
+/*
+  Q&A
+*/
+.l-qa__wrapper {
+  margin-bottom: pxToRem(40px);
+}
+.l-qa__box {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: pxToRem(24px);
+}
+.p-question {
+  font-family: fot-tsukuardgothic-std, sans-serif;
+  font-weight: 600;
+  $font-size: 24px;
+  font-size: pxToRem($font-size);
+}
+.p-answer {
+  $font-size: 16px;
+  font-size: pxToRem($font-size);
+  line-height: 24px;
+}
+
+.p-iconQA {
+  font-family: "Yu Gothic", "YuGothic", "Roboto", "Helvetica Neue", "Hiragino Kaku Gothic Pro", "Meiryo", "Arial",
+    "sans-serif";
+  $font-size: 24px;
+  font-weight: 700;
+  font-size: pxToRem($font-size);
+  margin-right: pxToRem(24px);
+}
