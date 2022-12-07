@@ -327,12 +327,20 @@
             address: "No. 28號, Chengdu Rd, Wanhua District, Taipei City, 台湾 108",
             url: "https://goo.gl/maps/SjCY656b8K4Ch4v76",
           },
+          {
+            name: "劉芋仔蛋黃芋餅",
+            type: "Lee",
+            lat: 25.05631601371031,
+            lng: 121.51637742594444,
+            address: "103 台湾 Taipei City, Datong District, Ningxia Rd, 091攤位",
+            url: "https://goo.gl/maps/ZqoptP7Wba9MVa447",
+          },
         ];
 
         //マーカーを格納する配列
         const marker = [];
 
-        //吹き出し（情報ウィンドウ）を格納する配列
+        //吹き出しを格納する配列
         const infoWindow = [];
 
         // マーカーをクリックしたときのイベント登録
@@ -343,7 +351,7 @@
               infoWindow[j].close(map, marker[j]);
             }
 
-            //クリックされたマーカーの吹き出し（情報ウィンドウ）を表示
+            //クリックされたマーカーの吹き出しを表示
             infoWindow[i].open(map, marker[i]);
           });
         };
@@ -387,10 +395,14 @@
           if (markerData[i]["type"] === "food") {
             markerOption.icon = "../img/food.png";
           }
+          //Leeさんおすすめだったときのマーカー画像を設定
+          if (markerData[i]["type"] === "Lee") {
+            markerOption.icon = "../img/lee.png";
+          }
           //各データごとにマーカーを作成
           marker[i] = new google.maps.Marker(markerOption);
 
-          // 各データごとに吹き出し（情報ウィンドウ）を作成
+          // 各データごとに吹き出しを作成
           infoWindow[i] = new google.maps.InfoWindow({
             content: `<div class="custom-info">
                 <div class="custom-info-item name">
